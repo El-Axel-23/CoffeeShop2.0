@@ -44,6 +44,5 @@ class PreguntaAdapter(private val lista: List<PreguntaFrecuente>) :
             notifyItemChanged(position)
         }
     }
-
     override fun getItemCount(): Int = lista.size
 }
