@@ -1,4 +1,7 @@
 package com.example.coffeeshop20.Modelo.AxelModels
 
-class RespuestaApi {
-}
+data class RespuestaApi<T>(
+    val status: String,
+    val message: String,
+    val data: T?
+)
