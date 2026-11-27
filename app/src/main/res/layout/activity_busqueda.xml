@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF6EC"
+    tools:context=".BusquedaActivity">
+
+    <!-- ENCABEZADO DE BUSQUEDA -->
+
+    <LinearLayout
+        android:id="@+id/headerBusqueda"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="12dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- REGRESAR -->
+
+        <ImageButton
+            android:id="@+id/btnRegresar"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_arrow_back"
+            android:padding="4dp"
+            android:contentDescription="Regresar"
+            app:tint="#3B1F14"/>
+
+        <!-- BARRA DE BUSQUEDA -->
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            app:cardBackgroundColor="#F7E9DA"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="0dp"
+            app:strokeColor="#5A3A2A"
+            app:strokeWidth="1dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingHorizontal="8dp">
+
+                <ImageView
+                    android:layout_width="17dp"
+                    android:layout_height="17dp"
+                    android:src="@drawable/ic_search"
+                    app:tint="#3B1F14"
+                    android:contentDescription="Buscar"/>
+
+                <EditText
+                    android:id="@+id/etBuscarProducto"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:layout_marginStart="7dp"
+                    android:background="@null"
+                    android:hint="Buscar productos..."
+                    android:textColor="#3B1F14"
+                    android:textColorHint="#7B6255"
+                    android:textSize="12sp"
+                    android:singleLine="true"
+                    android:inputType="text"
+                    android:imeOptions="actionSearch"
+                    tools:text="Cap"/>
+
+                <!-- BORRAR -->
+
+                <ImageButton
+                    android:id="@+id/btnLimpiarBusqueda"
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/ic_close"
+                    android:padding="4dp"
+                    android:contentDescription="Borrar búsqueda"
+                    app:tint="#3B1F14"/>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+
+    <!-- CONTENIDO -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/headerBusqueda"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="20dp">
+
+            <!-- BUSQUEDAS RECIENTES -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Búsquedas recientes"
+                android:textColor="#3B1F14"
+                android:textSize="11sp"
+                android:textStyle="bold"/>
+
+            <!-- HISTORIAL -->
+
+            <LinearLayout
+                android:id="@+id/contenedorRecientes"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="vertical">
+
+                <!-- LECHE -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:src="@drawable/ic_history"
+                        app:tint="#3B1F14"
+                        android:contentDescription="Historial"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Leche"
+                        android:textColor="#3B1F14"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+
+                <!-- MATCHA -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:src="@drawable/ic_history"
+                        app:tint="#3B1F14"
+                        android:contentDescription="Historial"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Matcha"
+                        android:textColor="#3B1F14"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+
+                <!-- CHAI -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="36dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="17dp"
+                        android:layout_height="17dp"
+                        android:src="@drawable/ic_history"
+                        app:tint="#3B1F14"
+                        android:contentDescription="Historial"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="Chai"
+                        android:textColor="#3B1F14"
+                        android:textSize="12sp"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <!-- POPULARES -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:text="Populares"
+                android:textColor="#3B1F14"
+                android:textSize="11sp"
+                android:textStyle="bold"/>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipGroupPopulares"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:chipSpacingHorizontal="5dp"
+                app:chipSpacingVertical="4dp"
+                app:singleSelection="false">
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipCappuccino"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:text="Cappuccino"
+                    android:textColor="#3B1F14"
+                    android:textSize="10sp"
+                    app:chipBackgroundColor="#F7E9DA"
+                    app:chipCornerRadius="18dp"
+                    app:chipStrokeWidth="0dp"
+                    app:ensureMinTouchTargetSize="false"
+                    android:checkable="false"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipLatte"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:text="Latte"
+                    android:textColor="#3B1F14"
+                    android:textSize="10sp"
+                    app:chipBackgroundColor="#F7E9DA"
+                    app:chipCornerRadius="18dp"
+                    app:chipStrokeWidth="0dp"
+                    app:ensureMinTouchTargetSize="false"
+                    android:checkable="false"/>
+
+                <com.google.android.material.chip.Chip
+                    android:id="@+id/chipCroissant"
+                    android:layout_width="wrap_content"
+                    android:layout_height="32dp"
+                    android:text="Croissant"
+                    android:textColor="#3B1F14"
+                    android:textSize="10sp"
+                    app:chipBackgroundColor="#F7E9DA"
+                    app:chipCornerRadius="18dp"
+                    app:chipStrokeWidth="0dp"
+                    app:ensureMinTouchTargetSize="false"
+                    android:checkable="false"/>
+
+            </com.google.android.material.chip.ChipGroup>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

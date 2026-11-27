@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_bottom_sheet"
+    android:paddingHorizontal="12dp"
+    android:paddingBottom="18dp">
+
+    <!-- INDICADOR SUPERIOR -->
+
+    <View
+        android:layout_width="32dp"
+        android:layout_height="3dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="14dp"
+        android:background="#EBD8C3"/>
+
+    <!-- TITULO -->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="¿Cómo quieres pagar?"
+        android:textColor="#3B1F14"
+        android:textSize="18sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:text="Elige una opción para tu pedido"
+        android:textColor="#6B5144"
+        android:textSize="12sp"/>
+
+
+    <!-- OPCION 1 -->
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/opcionCafeteria"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginTop="12dp"
+        app:cardBackgroundColor="#F7E9DA"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:strokeColor="#3B1F14"
+        app:strokeWidth="1dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="10dp">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_store"
+                app:tint="#3B1F14"
+                android:contentDescription="Cafetería"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pagar en la cafetería"
+                    android:textColor="#3B1F14"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Efectivo al recoger tu pedido"
+                    android:textColor="#6B5144"
+                    android:textSize="10sp"/>
+
+            </LinearLayout>
+
+            <RadioButton
+                android:id="@+id/rbCafeteria"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:buttonTint="#3B1F14"
+                android:checked="true"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <!-- OPCION 2 -->
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/opcionDomicilio"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginTop="8dp"
+        app:cardBackgroundColor="#F7E9DA"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="0dp"
+        app:strokeWidth="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="10dp">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:src="@drawable/ic_delivery"
+                app:tint="#3B1F14"
+                android:contentDescription="Entrega"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Entrega a domicilio"
+                    android:textColor="#3B1F14"
+                    android:textSize="12sp"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="3dp"
+                    android:text="Efectivo al recibir tu pedido"
+                    android:textColor="#6B5144"
+                    android:textSize="10sp"/>
+
+            </LinearLayout>
+
+            <RadioButton
+                android:id="@+id/rbDomicilio"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:buttonTint="#3B1F14"/>
+
+        </LinearLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+
+    <!-- TOTAL -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Total a pagar:"
+            android:textColor="#4A2E22"
+            android:textSize="11sp"/>
+
+        <TextView
+            android:id="@+id/tvTotalPago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="$103"
+            android:textColor="#3B1F14"
+            android:textSize="13sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+
+
+    <!-- CONFIRMAR PEDIDO -->
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnConfirmarPedido"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:layout_marginTop="12dp"
+        android:text="CONFIRMAR PEDIDO"
+        android:textColor="#FFFFFF"
+        android:textSize="12sp"
+        android:backgroundTint="#3B1F14"
+        app:cornerRadius="10dp"/>
+
+
+    <!-- CANCELAR -->
+
+    <TextView
+        android:id="@+id/tvCancelar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:text="Cancelar"
+        android:textColor="#6B5144"
+        android:textSize="11sp"
+        android:padding="4dp"/>
+
+</LinearLayout>

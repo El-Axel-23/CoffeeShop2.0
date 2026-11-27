@@ -1,0 +1,421 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF6EC"
+    tools:context=".PedidosActivity">
+
+    <!-- ============ HEADER ============ -->
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/btnRegresar"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:background="@android:color/transparent"
+            android:src="@drawable/ic_arrow_back"
+            android:padding="4dp"
+            android:contentDescription="Regresar"
+            app:tint="#3B1F14"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Mis pedidos"
+            android:textColor="#3B1F14"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium"/>
+
+    </LinearLayout>
+
+
+    <!-- ============ CONTENIDO ============ -->
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollPedidos"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/header"
+        app:layout_constraintBottom_toTopOf="@id/bottomNav"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="12dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="20dp">
+
+
+            <!-- ============ PEDIDO 1 ============ -->
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPedido1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="#F7E9DA"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <!-- Número y fecha -->
+
+                    <TextView
+                        android:id="@+id/tvNumeroPedido1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pedido #1024 - 12/11/2026"
+                        android:textColor="#3B1F14"
+                        android:textSize="13sp"
+                        android:textStyle="bold"/>
+
+                    <!-- Productos -->
+
+                    <TextView
+                        android:id="@+id/tvProductosPedido1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="1 Cappuccino Clásico, 1 Croissant Mantequilla"
+                        android:textColor="#4A2E22"
+                        android:textSize="11sp"/>
+
+                    <!-- Total -->
+
+                    <TextView
+                        android:id="@+id/tvTotalPedido1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Total: $103"
+                        android:textColor="#3B1F14"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+
+                    <!-- Estado -->
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/estadoPedido1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:layout_marginTop="10dp"
+                        app:cardBackgroundColor="#3B1F14"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp">
+
+                        <TextView
+                            android:id="@+id/tvEstadoPedido1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingHorizontal="14dp"
+                            android:text="En preparación"
+                            android:textColor="#FFFFFF"
+                            android:textSize="11sp"
+                            android:textStyle="bold"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+
+            <!-- ============ PEDIDO 2 ============ -->
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardPedido2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                app:cardBackgroundColor="#F7E9DA"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="0dp"
+                app:strokeWidth="0dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="12dp">
+
+                    <!-- Número y fecha -->
+
+                    <TextView
+                        android:id="@+id/tvNumeroPedido2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Pedido #1019 - 10/11/2026"
+                        android:textColor="#3B1F14"
+                        android:textSize="13sp"
+                        android:textStyle="bold"/>
+
+                    <!-- Productos -->
+
+                    <TextView
+                        android:id="@+id/tvProductosPedido2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="1 Flat White"
+                        android:textColor="#4A2E22"
+                        android:textSize="11sp"/>
+
+                    <!-- Total -->
+
+                    <TextView
+                        android:id="@+id/tvTotalPedido2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Total: $48"
+                        android:textColor="#3B1F14"
+                        android:textSize="14sp"
+                        android:textStyle="bold"/>
+
+                    <!-- Estado -->
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/estadoPedido2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="26dp"
+                        android:layout_marginTop="10dp"
+                        app:cardBackgroundColor="#EBD8C3"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="0dp">
+
+                        <TextView
+                            android:id="@+id/tvEstadoPedido2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:paddingHorizontal="14dp"
+                            android:text="Entregado"
+                            android:textColor="#4A2E22"
+                            android:textSize="11sp"
+                            android:textStyle="bold"/>
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <!-- ============ BOTTOM NAV ============ -->
+
+    <LinearLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#F7E9DA"
+        android:orientation="horizontal"
+        android:paddingVertical="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <!-- INICIO -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginVertical="4dp"
+                android:src="@drawable/ic_home"
+                app:tint="#3B1F14"
+                android:contentDescription="Inicio"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Inicio"
+                android:textColor="#3B1F14"
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+
+
+        <!-- MENÚ -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginVertical="4dp"
+                android:src="@drawable/ic_coffee"
+                app:tint="#3B1F14"
+                android:contentDescription="Menú"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menú"
+                android:textColor="#3B1F14"
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+
+
+        <!-- CARRITO -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="30dp"
+                android:layout_height="30dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_shopping_cart"
+                    app:tint="#3B1F14"
+                    android:contentDescription="Carrito"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:layout_gravity="top|end"
+                    app:cardBackgroundColor="#3B1F14"
+                    app:cardCornerRadius="7dp"
+                    app:cardElevation="0dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:text="2"
+                        android:textColor="#FFFFFF"
+                        android:textSize="9sp"/>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </FrameLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Carrito"
+                android:textColor="#3B1F14"
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+
+
+        <!-- FAVORITOS -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginVertical="4dp"
+                android:src="@drawable/ic_favorite_border"
+                app:tint="#3B1F14"
+                android:contentDescription="Favoritos"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Favoritos"
+                android:textColor="#3B1F14"
+                android:textSize="10sp"/>
+
+        </LinearLayout>
+
+
+        <!-- PERFIL ACTIVO -->
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="50dp"
+                android:layout_height="30dp"
+                app:cardBackgroundColor="#EBD8C3"
+                app:cardCornerRadius="15dp"
+                app:cardElevation="0dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_person"
+                    app:tint="#3B1F14"
+                    android:contentDescription="Perfil"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Perfil"
+                android:textColor="#3B1F14"
+                android:textSize="10sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
